@@ -21,7 +21,7 @@ const ResetPassword = () => {
     const submitHandler = async (values) => {
         // console.log('Received values of form: ', values);
         try {
-            const res = await axiosInstance.post(
+            const res = await Axios.post(
                 '/api/users/reset',
                 {
                     password: values.password,

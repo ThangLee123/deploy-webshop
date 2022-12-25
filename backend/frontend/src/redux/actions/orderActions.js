@@ -47,7 +47,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     try {
         const { token } = getState();
         // console.log(token);
-        const { data } = await axiosInstance.post('/api/orders/', order, {
+        const { data } = await Axios.post('/api/orders/', order, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -72,7 +72,7 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DETAILS_REQUEST, payload: orderId });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.get(`/api/orders/${orderId}`, {
+        const { data } = await Axios.get(`/api/orders/${orderId}`, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -90,7 +90,7 @@ export const payOrder = (order, paymentResult) => async (dispatch, getState) => 
     dispatch({ type: ORDER_PAY_REQUEST, payload: { order, paymentResult } });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.put(`/api/orders/${order._id}/pay`, paymentResult, {
+        const { data } = await Axios.put(`/api/orders/${order._id}/pay`, paymentResult, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -109,7 +109,7 @@ export const listOrderMine =
         dispatch({ type: ORDER_MINE_LIST_REQUEST });
         try {
             const { token } = getState();
-            const { data } = await axiosInstance.get(
+            const { data } = await Axios.get(
                 `/api/orders/mine?searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
                 {
                     headers: {
@@ -130,7 +130,7 @@ export const listOrders =
         dispatch({ type: ORDER_LIST_REQUEST });
         try {
             const { token } = getState();
-            const { data } = await axiosInstance.get(
+            const { data } = await Axios.get(
                 `/api/orders?seller=${seller}&searchValue=${searchValue}&month=${month}&year=${year}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
                 {
                     headers: {
@@ -149,7 +149,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DELETE_REQUEST, payload: orderId });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.delete(`/api/orders/${orderId}`, {
+        const { data } = await Axios.delete(`/api/orders/${orderId}`, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -166,7 +166,7 @@ export const deliverOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DELIVER_REQUEST, payload: orderId });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.put(
+        const { data } = await Axios.put(
             `/api/orders/${orderId}/deliver`,
             {},
             {
@@ -189,7 +189,7 @@ export const listSellerSalary =
         dispatch({ type: SELLER_SALARY_LIST_REQUEST });
         try {
             const { token } = getState();
-            const { data } = await axiosInstance.get(
+            const { data } = await Axios.get(
                 `/api/orders/paySummary?month=${month}&year=${year}&searchValue=${searchValue}`,
                 {
                     headers: {
@@ -216,7 +216,7 @@ export const listSellerSalary1 =
         dispatch({ type: SELLER_SALARY_LIST_REQUEST1 });
         try {
             const { token } = getState();
-            const { data } = await axiosInstance.get(
+            const { data } = await Axios.get(
                 `/api/orders/paySummary1?month=${month}&year=${year}&searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
                 {
                     headers: {
@@ -237,7 +237,7 @@ export const paySellerSalary =
         dispatch({ type: PAY_SELLER_SALARY_REQUEST, payload: sellerId });
         try {
             const { token } = getState();
-            const { data } = await axiosInstance.put(
+            const { data } = await Axios.put(
                 `/api/orders/paySellerSalary/${sellerId}?payMonth=${payMonth}&payYear=${payYear}`,
                 {},
                 {
@@ -259,7 +259,7 @@ export const updateWatchOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_WATCH_REQUEST });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.put(
+        const { data } = await Axios.put(
             `/api/orders/watch/${orderId}`,
             {},
             {
@@ -283,14 +283,11 @@ export const calculateMonthRevenue =
         dispatch({ type: MONTH_REVENUE_REQUEST });
         try {
             const { token } = getState();
-            const { data } = await axiosInstance.get(
-                `/api/orders/monthRevenue?seller=${seller}&month=${month}&year=${year}`,
-                {
-                    headers: {
-                        Authorization: `${token}`,
-                    },
+            const { data } = await Axios.get(`/api/orders/monthRevenue?seller=${seller}&month=${month}&year=${year}`, {
+                headers: {
+                    Authorization: `${token}`,
                 },
-            );
+            });
             dispatch({ type: MONTH_REVENUE_SUCCESS, payload: data });
         } catch (error) {
             const message = error.response && error.response.data.message ? error.response.data.message : error.message;

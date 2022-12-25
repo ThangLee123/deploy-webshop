@@ -37,7 +37,7 @@ function App() {
         // if (firstLogin) {
         if (!userSignin.userInfo) {
             const getToken = async () => {
-                const res = await axiosInstance.post('/api/users/refresh_token', null);
+                const res = await axios.post('/api/users/refresh_token', null);
                 dispatch({ type: 'GET_TOKEN', payload: res.data.access_token });
             };
             getToken();

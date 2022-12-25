@@ -27,7 +27,7 @@ const Register = () => {
     const submitHandler = async (values) => {
         // console.log('Received values of form: ', values);
         try {
-            const res = await axiosInstance.post('/api/users/register', {
+            const res = await Axios.post('/api/users/register', {
                 name: values.name,
                 email: values.email,
                 password: values.password,
