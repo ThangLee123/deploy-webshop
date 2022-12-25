@@ -98,7 +98,7 @@ const Product = () => {
                         <Alert message="Error" description={error} type="error" showIcon />
                     ) : (
                         <>
-                            {products.length === 0 && (
+                            {products && products.length === 0 && (
                                 <Alert
                                     style={{ width: '100%' }}
                                     message=""
