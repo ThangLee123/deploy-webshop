@@ -3,7 +3,8 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GlobalStyles from '~/components/GlobalStyles';
+// import GlobalStyles from '~/components/GlobalStyles';
+import GlobalStyles from './components/GlobalStyles';
 import store from './redux/store';
 import { SocketProvider } from './config/socketContext';
 import { NotifyProvider } from './config/notificationContext';
@@ -11,8 +12,8 @@ import { NotifyProvider } from './config/notificationContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
-        {/* <React.StrictMode> */}
         <GlobalStyles>
+            {/* <React.StrictMode> */}
             <SocketProvider>
                 <NotifyProvider>
                     <App />

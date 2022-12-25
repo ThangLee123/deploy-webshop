@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Header from '~/layouts/components/Header';
+// import Header from '~/layouts/components/Header';
 import styles from './DefaultLayout.module.scss';
 import SubHeader from '../components/SubHeader';
 import Footer from '../components/Footer';
 import { useLocation } from 'react-router-dom';
+import Header from '../components/Header';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,7 @@ function DefaultLayout({ children }) {
             <Header />
             <SubHeader />
             <div className={cx('container')}>
-                <div className={cx('content')} >{children}</div>
+                <div className={cx('content')}>{children}</div>
             </div>
             <Footer />
         </div>

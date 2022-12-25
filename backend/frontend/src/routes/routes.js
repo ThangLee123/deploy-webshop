@@ -1,33 +1,33 @@
-import config from '~/config';
+import config from '../config';
 
 // Layouts
-import { SubHeaderOnly } from '~/layouts';
+import { SubHeaderOnly } from '../layouts';
 
 // Pages
-import Cart from '~/pages/Cart';
-import Home from '~/pages/Home';
-import Product from '~/pages/Product';
-import Register from '~/pages/Register';
-import SigninScreen from '~/pages/SignIn';
-import ActivationEmail from '~/pages/activationEmail';
-import ForgetPassword from '~/pages/ForgetPassword';
-import ResetPassword from '~/pages/ResetPassword';
-import ShippingAddress from '~/pages/ShippingAddress';
-import PrivateRoute from '~/components/PrivateRoute';
-import Order from '~/pages/Order';
-import OrderHistory from '~/pages/OrderHistory/OrderHistory';
-import UserProfile from '~/pages/UserProfile';
-import { createProduct } from '~/redux/actions/productActions';
-import ProductManagement from '~/pages/ProductManagement';
-import ProductEdit from '~/pages/ProductEdit';
-import AdminRoute from '~/components/AdminRoute';
-import OrderList from '~/pages/OrderList';
-import UserList from '~/pages/UserList/UserList';
-import UserEdit from '~/pages/UserEdit';
-import SellerRoute from '~/components/SellerRoute';
-import SellerScreen from '~/pages/SellerScreen';
-import PaySellerSalary from '~/pages/PaySellerSalary';
-import OrderRollback from '~/pages/OrderRollback';
+import Cart from '../pages/Cart';
+import Home from '../pages/Home';
+import Product from '../pages/Product';
+import Register from '../pages/Register';
+import SigninScreen from '../pages/SignIn';
+import ActivationEmail from '../pages/activationEmail';
+import ForgetPassword from '../pages/ForgetPassword';
+import ResetPassword from '../pages/ResetPassword';
+import ShippingAddress from '../pages/ShippingAddress';
+import PrivateRoute from '../components/PrivateRoute';
+import Order from '../pages/Order';
+import OrderHistory from '../pages/OrderHistory/OrderHistory';
+import UserProfile from '../pages/UserProfile';
+// import { createProduct } from '~/redux/actions/productActions';
+import ProductManagement from '../pages/ProductManagement';
+import ProductEdit from '../pages/ProductEdit';
+import AdminRoute from '../components/AdminRoute';
+import OrderList from '../pages/OrderList';
+import UserList from '../pages/UserList/UserList';
+import UserEdit from '../pages/UserEdit';
+import SellerRoute from '../components/SellerRoute';
+import SellerScreen from '../pages/SellerScreen';
+import PaySellerSalary from '../pages/PaySellerSalary';
+import OrderRollback from '../pages/OrderRollback';
 
 // Public routes
 const publicRoutes = [
