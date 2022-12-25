@@ -111,13 +111,14 @@ const Product = () => {
                                 {/* products
                                     .slice(-9)
                                     .reverse() */}
-                                {products.reverse().map((product) => {
-                                    // console.log('wwww', product);
-                                    if (product.countInStock > 0) {
-                                        return <ProductItem key={product._id} product={product}></ProductItem>;
-                                    }
-                                    return;
-                                })}
+                                {products &&
+                                    products.reverse().map((product) => {
+                                        // console.log('wwww', product);
+                                        if (product.countInStock > 0) {
+                                            return <ProductItem key={product._id} product={product}></ProductItem>;
+                                        }
+                                        return;
+                                    })}
                             </section>
                             <Link to="/" className={cx('view-more-btn')}>
                                 View More
