@@ -20,9 +20,11 @@ app.use(cookieParser());
 
 const __dirname1 = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname1, "/uploads")));
-app.use(express.static(path.join(__dirname1, "/frontend/build")));
+
+// console.log("ssssss", path.join(__dirname1.slice(0, -8), "/frontend/build"));
+app.use(express.static(path.join(__dirname1.slice(0, -8), "/frontend/build")));
 app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname1, "/frontend/build/index.html"))
+  res.sendFile(path.join(__dirname1.slice(0, -8), "/frontend/build/index.html"))
 );
 
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/kltn");
