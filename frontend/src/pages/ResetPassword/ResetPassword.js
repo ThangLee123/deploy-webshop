@@ -8,6 +8,7 @@ import styles from './ResetPassword.module.scss';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Axios from 'axios';
+import { axiosInstance } from '~/config/configApiUrl';
 
 const cx = classNames.bind(styles);
 
@@ -20,7 +21,7 @@ const ResetPassword = () => {
     const submitHandler = async (values) => {
         // console.log('Received values of form: ', values);
         try {
-            const res = await Axios.post(
+            const res = await axiosInstance.post(
                 '/api/users/reset',
                 {
                     password: values.password,

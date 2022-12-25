@@ -8,6 +8,7 @@ import { USER_UPDATE_PROFILE_RESET } from '~/redux/constants/userConstants';
 import Axios from 'axios';
 import { showErrorMessage } from '~/utils/notifyService';
 import styles from './UserProfile.module.scss';
+import { axiosInstance } from '~/config/configApiUrl';
 
 const cx = classNames.bind(styles);
 export default function UserProfile() {
@@ -74,8 +75,8 @@ export default function UserProfile() {
         const bodyFormData = new FormData();
         bodyFormData.append('image', avatar);
         try {
-            // const { data } = await Axios.post("/api/uploads/s3", // upload to upload folder s3
-            const { data } = await Axios.post('/api/uploads', bodyFormData, {
+            // const { data } = await axiosInstance.post("/api/uploads/s3", // upload to upload folder s3
+            const { data } = await axiosInstance.post('/api/uploads', bodyFormData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `${token}`,

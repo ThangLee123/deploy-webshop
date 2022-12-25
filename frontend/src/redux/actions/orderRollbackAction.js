@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { axiosInstance } from '~/config/configApiUrl';
 import { showErrorMessage, showSuccessMessage } from '~/utils/notifyService';
 import {
     ORDER_ROLLBACK_CREATE_FAIL,
@@ -19,7 +20,7 @@ export const createOrderRollback = (orderRollback, orderId) => async (dispatch, 
     dispatch({ type: ORDER_ROLLBACK_CREATE_REQUEST });
     try {
         const { token } = getState();
-        const { data } = await Axios.post(`/api/orderRollback/${orderId}`, orderRollback, {
+        const { data } = await axiosInstance.post(`/api/orderRollback/${orderId}`, orderRollback, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -48,7 +49,7 @@ export const listOrderRollback =
         dispatch({ type: ORDER_ROLLBACK_LIST_REQUEST });
         try {
             const { token } = getState();
-            const { data } = await Axios.get(
+            const { data } = await axiosInstance.get(
                 `/api/orderRollback?month=${month}&year=${year}&searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
                 {
                     headers: {
@@ -67,7 +68,7 @@ export const handleRollbackOrder = (rollbackData) => async (dispatch, getState) 
     dispatch({ type: ORDER_ROLLBACK_HANDLE_REQUEST, payload: rollbackData });
     try {
         const { token } = getState();
-        const { data } = await Axios.put(`/api/orderRollback`, rollbackData, {
+        const { data } = await axiosInstance.put(`/api/orderRollback`, rollbackData, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -88,7 +89,7 @@ export const updateAdminWatchOrderRollback = (orderId) => async (dispatch, getSt
     dispatch({ type: ORDER_ROLLBACK_UPDATE_ADMIN_WATCH_REQUEST });
     try {
         const { token } = getState();
-        const { data } = await Axios.put(
+        const { data } = await axiosInstance.put(
             `/api/orderRollback/${orderId}`,
             {},
             {

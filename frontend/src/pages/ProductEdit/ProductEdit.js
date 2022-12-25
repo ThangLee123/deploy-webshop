@@ -9,6 +9,7 @@ import { Alert, Radio, Space, Spin } from 'antd';
 
 import { detailsProduct, updateProduct } from '~/redux/actions/productActions';
 import { PRODUCT_UPDATE_RESET } from '~/redux/constants/productConstants';
+import { axiosInstance } from '~/config/configApiUrl';
 const cx = classNames.bind(styles);
 
 export default function ProductEdit() {
@@ -88,8 +89,8 @@ export default function ProductEdit() {
         const bodyFormData = new FormData();
         bodyFormData.append('image', imgFile);
         try {
-            // const { data } = await Axios.post("/api/uploads/s3", // upload to upload folder s3
-            const { data } = await Axios.post('/api/uploads', bodyFormData, {
+            // const { data } = await axiosInstance.post("/api/uploads/s3", // upload to upload folder s3
+            const { data } = await axiosInstance.post('/api/uploads', bodyFormData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `${token}`,

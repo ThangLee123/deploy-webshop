@@ -9,6 +9,7 @@ import { USER_SIGNIN_SUCCESS } from './redux/constants/userConstants';
 import { fetchUser } from './redux/actions/userActions';
 import { useContext } from 'react';
 import { SocketContext } from './config/socketContext';
+import { axiosInstance } from './config/configApiUrl';
 
 // export const socketContext = createContext();
 function App() {
@@ -36,7 +37,7 @@ function App() {
         // if (firstLogin) {
         if (!userSignin.userInfo) {
             const getToken = async () => {
-                const res = await axios.post('/api/users/refresh_token', null);
+                const res = await axiosInstance.post('/api/users/refresh_token', null);
                 dispatch({ type: 'GET_TOKEN', payload: res.data.access_token });
             };
             getToken();
