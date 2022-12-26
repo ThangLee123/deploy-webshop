@@ -32,9 +32,10 @@ export const listProducts =
         // console.log('act2');
         try {
             // console.log('act3');
-            const { data } = await axiosInstance.get(
+            const { data } = await axiosInstance.post(
                 `/api/products?searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}&seller=${seller}`,
-            );
+                {},
+            ); //m
             // console.log(data);
             // console.log('act4');
             dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
@@ -53,7 +54,7 @@ export const detailsProduct = (productId) => async (dispatch) => {
     // console.log('acc2');
     try {
         // console.log('acc3');
-        const { data } = await axiosInstance.get(`/api/products/${productId}`);
+        const { data } = await axiosInstance.post(`/api/products/${productId}`, {}); //m
         // console.log(data);
         // console.log('acc4');
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });

@@ -3,30 +3,30 @@ const authMiddle = require("../middlewares/authMiddleware");
 const orderController = require("../controllers/orderController");
 const Order = require("../models/orderModel");
 
-orderRouter.get(
+orderRouter.post(
   "/",
   [authMiddle.isAuth, authMiddle.isSellerOrAdmin],
   orderController.getOrderList
-);
+); //m
 
 orderRouter.post("/", authMiddle.isAuth, orderController.createOrder);
 
-orderRouter.get("/mine", authMiddle.isAuth, orderController.getOrderHistory);
-orderRouter.get(
+orderRouter.post("/mine", authMiddle.isAuth, orderController.getOrderHistory); //m
+orderRouter.post(
   "/paySummary",
   [authMiddle.isAuth, authMiddle.isAdmin],
   orderController.paySummary
-);
-orderRouter.get(
+); //m
+orderRouter.post(
   "/paySummary1",
   [authMiddle.isAuth, authMiddle.isAdmin],
   orderController.paySummary1
-);
-orderRouter.get(
+); //m
+orderRouter.post(
   "/monthRevenue",
   [authMiddle.isAuth, authMiddle.isSellerOrAdmin],
   orderController.calculateMonthRevenue
-);
+); //m
 orderRouter.put(
   "/watch/:orderId",
   [authMiddle.isAuth, authMiddle.isSellerOrAdmin],
@@ -39,7 +39,7 @@ orderRouter.put(
   orderController.paySellerSalary
 );
 
-orderRouter.get("/:id", authMiddle.isAuth, orderController.getOrderByID);
+orderRouter.post("/:id", authMiddle.isAuth, orderController.getOrderByID); //m
 
 orderRouter.delete(
   "/:id",

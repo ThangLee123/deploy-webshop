@@ -8,11 +8,11 @@ orderRollbackRouter.post(
   authMiddle.isAuth,
   orderRollbackController.createOrderRollBack
 );
-orderRollbackRouter.get(
+orderRollbackRouter.post(
   "/",
   authMiddle.isAuth,
   orderRollbackController.getAllRollbackOrders
-);
+); //m
 
 orderRollbackRouter.put(
   "/:orderId",

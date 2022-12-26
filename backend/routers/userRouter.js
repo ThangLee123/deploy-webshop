@@ -2,17 +2,17 @@ const userRouter = require("express").Router();
 const userController = require("../controllers/userController");
 const authMiddle = require("../middlewares/authMiddleware");
 
-userRouter.get("/seed", userController.createUserSeed);
+userRouter.post("/seed", userController.createUserSeed); //m
 
-userRouter.get("/:id", userController.userProfileDetail);
+userRouter.post("/:id", userController.userProfileDetail); //m
 
 userRouter.put("/profile", authMiddle.isAuth, userController.userProfileUpdate);
 
-userRouter.get(
+userRouter.post(
   "/",
   [authMiddle.isAuth, authMiddle.isAdmin],
   userController.getUsers
-);
+); //m
 
 userRouter.put(
   "/:id",

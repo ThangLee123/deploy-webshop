@@ -4,7 +4,7 @@ const vnPayController = require("../controllers/vnPayController");
 // authRouter.get("/seed", authController.createUserSeed);
 
 vnPayRouter.post("/checkout", vnPayController.checkoutPaymentVNP);
-vnPayRouter.get("/:gateway/callback", vnPayController.callbackPaymentVNP);
+vnPayRouter.post("/:gateway/callback", vnPayController.callbackPaymentVNP); //m
 // vnPayRouter.get('/success', (req, res) => {
 // 	res.render('result', {
 // 		title: 'Nau Store',
@@ -24,4 +24,4 @@ vnPayRouter.get("/:gateway/callback", vnPayController.callbackPaymentVNP);
 // 	});
 // });
 
-module.exports = vnPayRouter
+module.exports = vnPayRouter;

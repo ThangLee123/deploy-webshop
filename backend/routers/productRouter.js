@@ -3,15 +3,15 @@ const productController = require("../controllers/productController");
 
 const authMiddle = require("../middlewares/authMiddleware");
 
-productRouter.get("/", productController.getAllProducts);
+productRouter.post("/", productController.getAllProducts); //m
 productRouter.post(
   "/",
   [authMiddle.isAuth, authMiddle.isSellerOrAdmin],
   productController.productElement
 );
 
-productRouter.get("/seed", productController.createProductSeed);
-productRouter.get("/:id", productController.getProductById);
+productRouter.post("/seed", productController.createProductSeed); //m
+productRouter.post("/:id", productController.getProductById); //m
 
 productRouter.put(
   "/:id",
