@@ -26,7 +26,7 @@ const getAllProducts = expressAsyncHandler(async (req, res) => {
     .populate("seller", "seller.name seller.logo email")
     .skip(pageSize * (page - 1))
     .limit(pageSize);
-  res.send({
+  res.status(200).json({
     products,
     page,
     pages: Math.ceil(count / pageSize),
