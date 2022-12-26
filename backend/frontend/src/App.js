@@ -51,6 +51,7 @@ function App() {
         const res = await axios.post(window.location.href, null);
       };
       vnpayHandle();
+      window.close();
     }
   }, []);
   useEffect(() => {

@@ -590,7 +590,7 @@ function Order() {
               window.screen.availHeight
           );
           var timer = setInterval(function () {
-            console.log("newW", vnpayWindow.location.href);
+            // console.log("newW", vnpayWindow.location.href);
             if (vnpayWindow.closed) {
               clearInterval(timer);
               dispatch(detailsOrder(orderId));
