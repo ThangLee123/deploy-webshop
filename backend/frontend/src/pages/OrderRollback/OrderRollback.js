@@ -1,6 +1,6 @@
 import { React, useContext } from 'react';
 import classNames from 'classnames/bind';
-import { SocketContext } from '~/config/socketContext';
+import { SocketContext } from '../../config/socketContext';
 import { Alert, Spin, Input, DatePicker, Modal, Pagination } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import moment from 'moment';
@@ -11,10 +11,10 @@ import {
     handleRollbackOrder,
     listOrderRollback,
     updateAdminWatchOrderRollback,
-} from '~/redux/actions/orderRollbackAction';
+} from '../../redux/actions/orderRollbackAction';
 import styles from './OrderRollback.module.scss';
-import { NotifyContext } from '~/config/notificationContext';
-import { ORDER_ROLLBACK_HANDLE_RESET } from '~/redux/constants/orderRollbackConstants';
+import { NotifyContext } from '../../config/notificationContext';
+import { ORDER_ROLLBACK_HANDLE_RESET } from '../../redux/constants/orderRollbackConstants';
 
 const cx = classNames.bind(styles);
 const { Search } = Input;

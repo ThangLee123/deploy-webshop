@@ -17,7 +17,6 @@ import PrivateRoute from '../components/PrivateRoute';
 import Order from '../pages/Order';
 import OrderHistory from '../pages/OrderHistory/OrderHistory';
 import UserProfile from '../pages/UserProfile';
-// import { createProduct } from '~/redux/actions/productActions';
 import ProductManagement from '../pages/ProductManagement';
 import ProductEdit from '../pages/ProductEdit';
 import AdminRoute from '../components/AdminRoute';

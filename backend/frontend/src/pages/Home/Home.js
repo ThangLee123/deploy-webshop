@@ -7,11 +7,11 @@ import Banner from './components/Banner';
 import { useEffect } from 'react';
 import ProductList from '../../components/ProductList';
 import ProductOutroImage from './components/ProductOutroImage';
-import Header from '~/layouts/components/Header';
-import SubHeader from '~/layouts/components/SubHeader';
-import Footer from '~/layouts/components/Footer';
-import GoToTop from '~/components/GoToTop';
-import ChatBot from '~/components/ChatBot';
+import Header from '../../layouts/components/Header';
+import SubHeader from '../../layouts/components/SubHeader';
+import Footer from '../../layouts/components/Footer';
+import GoToTop from '../../components/GoToTop';
+import ChatBot from '../../components/ChatBot';
 
 const cx = classNames.bind(styles);
 

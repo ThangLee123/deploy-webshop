@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductItem from '../ProductItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '~/redux/actions/productActions';
+import { listProducts } from '../../redux/actions/productActions';
 const cx = classNames.bind(styles);
 
 const Product = () => {

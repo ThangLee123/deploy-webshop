@@ -6,12 +6,12 @@ import { Alert, Spin, DatePicker, Input, Pagination } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './OrderList.module.scss';
-import { calculateMonthRevenue, deleteOrder, listOrders, updateWatchOrder } from '~/redux/actions/orderActions';
-import { MONTH_REVENUE_RESET, ORDER_DELETE_RESET } from '~/redux/constants/orderConstants';
+import { calculateMonthRevenue, deleteOrder, listOrders, updateWatchOrder } from '../../redux/actions/orderActions';
+import { MONTH_REVENUE_RESET, ORDER_DELETE_RESET } from '../../redux/constants/orderConstants';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { SocketContext } from '~/config/socketContext';
-import { NotifyContext } from '~/config/notificationContext';
+import { SocketContext } from '../../config/socketContext';
+import { NotifyContext } from '../../config/notificationContext';
 
 const cx = classNames.bind(styles);
 const { Search } = Input;

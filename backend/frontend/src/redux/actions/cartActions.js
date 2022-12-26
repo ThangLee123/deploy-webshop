@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { axiosInstance } from '~/config/configApiUrl';
+import { axiosInstance } from '../../config/configApiUrl';
 import {
     CART_ADD_ITEM,
     CART_REMOVE_ITEM,

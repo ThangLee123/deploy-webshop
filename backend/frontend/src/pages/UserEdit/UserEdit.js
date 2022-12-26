@@ -4,9 +4,9 @@ import styles from './UserEdit.module.scss';
 import classNames from 'classnames/bind';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailsUser, updateUser } from '~/redux/actions/userActions';
-import { USER_UPDATE_RESET } from '~/redux/constants/userConstants';
-import { showErrorMessage } from '~/utils/notifyService';
+import { detailsUser, updateUser } from '../../redux/actions/userActions';
+import { USER_UPDATE_RESET } from '../../redux/constants/userConstants';
+import { showErrorMessage } from '../../utils/notifyService';
 
 const cx = classNames.bind(styles);
 

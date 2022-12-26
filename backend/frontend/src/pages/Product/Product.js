@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Product.module.scss';
 import { Link, useParams } from 'react-router-dom';
-import data from '~/data';
 import { useDispatch, useSelector } from 'react-redux';
 import { Alert, Rate, Spin, Tabs } from 'antd';
 import { format } from 'timeago.js';
@@ -10,11 +9,11 @@ import { useEffect, useState } from 'react';
 import ProductDetail from './components/ProductDetail';
 import ProductSlider from './components/ProductSlider';
 import ProductBreadcrumb from './components/ProductBreadcrumb';
-import { createReview, detailsProduct } from '~/redux/actions/productActions';
-import { PRODUCT_REVIEW_CREATE_RESET } from '~/redux/constants/productConstants';
-import { showErrorMessage, showSuccessMessage } from '~/utils/notifyService';
+import { createReview, detailsProduct } from '../../redux/actions/productActions';
+import { PRODUCT_REVIEW_CREATE_RESET } from '../../redux/constants/productConstants';
+import { showErrorMessage, showSuccessMessage } from '../../utils/notifyService';
 import { useContext } from 'react';
-import { SocketContext } from '~/config/socketContext';
+import { SocketContext } from '../../config/socketContext';
 
 const cx = classNames.bind(styles);
 

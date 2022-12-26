@@ -5,9 +5,9 @@ import styles from './UserList.module.scss';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { deleteUser, listUsers } from '~/redux/actions/userActions';
-import { USER_DETAILS_RESET } from '~/redux/constants/userConstants';
-import { USER_DELETE_RESET } from '~/redux/constants/userConstants';
+import { deleteUser, listUsers } from '../../redux/actions/userActions';
+import { USER_DETAILS_RESET } from '../../redux/constants/userConstants';
+import { USER_DELETE_RESET } from '../../redux/constants/userConstants';
 
 const cx = classNames.bind(styles);
 const { Search } = Input;

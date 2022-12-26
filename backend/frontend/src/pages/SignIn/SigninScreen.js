@@ -7,12 +7,12 @@ import classNames from 'classnames/bind';
 import styles from './SigninScreen.module.scss';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { signin } from '~/redux/actions/userActions';
-import { USER_SIGNIN_FIRSTLOGIN, USER_SIGNIN_RESET } from '~/redux/constants/userConstants';
+import { signin } from '../../redux/actions/userActions';
+import { USER_SIGNIN_FIRSTLOGIN, USER_SIGNIN_RESET } from '../../redux/constants/userConstants';
 import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
 import axios from 'axios';
-import { successLoading } from '~/utils/loadingService';
+import { successLoading } from '../../utils/loadingService';
 
 const cx = classNames.bind(styles);
 

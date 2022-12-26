@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Alert } from 'antd';
-import { addToCart } from '~/redux/actions/cartActions';
+import { addToCart } from '../../redux/actions/cartActions';
 
 const cx = classNames.bind(styles);
 

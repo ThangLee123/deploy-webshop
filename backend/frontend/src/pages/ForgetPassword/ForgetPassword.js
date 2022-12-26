@@ -8,7 +8,6 @@ import styles from './ForgetPassword.module.scss';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Axios from 'axios';
-import { axiosInstance } from '~/config/configApiUrl';
 
 const cx = classNames.bind(styles);
 

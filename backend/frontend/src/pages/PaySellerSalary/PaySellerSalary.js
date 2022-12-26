@@ -7,7 +7,7 @@ import styles from './PaySellerSalary.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { listSellerSalary, listSellerSalary1, paySellerSalary } from '~/redux/actions/orderActions';
+import { listSellerSalary, listSellerSalary1, paySellerSalary } from '../../redux/actions/orderActions';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);

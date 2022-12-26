@@ -1,6 +1,6 @@
 import Axios from 'axios';
-import { axiosInstance } from '~/config/configApiUrl';
-import { showErrorMessage, showSuccessMessage } from '~/utils/notifyService';
+import { axiosInstance } from '../../config/configApiUrl';
+import { showErrorMessage, showSuccessMessage } from '../../utils/notifyService';
 import { CART_EMPTY } from '../constants/cartConstants';
 import {
     USER_DELETE_FAIL,

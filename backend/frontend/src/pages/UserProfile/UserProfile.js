@@ -3,12 +3,12 @@ import { Alert, Button, Input, Spin } from 'antd';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailsUser, updateUserProfile } from '~/redux/actions/userActions';
-import { USER_UPDATE_PROFILE_RESET } from '~/redux/constants/userConstants';
+import { detailsUser, updateUserProfile } from '../../redux/actions/userActions';
+import { USER_UPDATE_PROFILE_RESET } from '../../redux/constants/userConstants';
 import Axios from 'axios';
-import { showErrorMessage } from '~/utils/notifyService';
+import { showErrorMessage } from '../../utils/notifyService';
 import styles from './UserProfile.module.scss';
-import { axiosInstance } from '~/config/configApiUrl';
+import { axiosInstance } from '../../config/configApiUrl';
 
 const cx = classNames.bind(styles);
 export default function UserProfile() {

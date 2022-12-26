@@ -5,7 +5,7 @@ import { Pagination, Space, Table, Tag, notification } from 'antd';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-import { addToCart, removeFromCart } from '~/redux/actions/cartActions';
+import { addToCart, removeFromCart } from '../../../../redux/actions/cartActions';
 const cx = classNames.bind(styles);
 
 function CartProductList() {

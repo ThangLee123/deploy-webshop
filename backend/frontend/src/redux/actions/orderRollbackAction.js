@@ -1,6 +1,6 @@
 import Axios from 'axios';
-import { axiosInstance } from '~/config/configApiUrl';
-import { showErrorMessage, showSuccessMessage } from '~/utils/notifyService';
+import { axiosInstance } from '../../config/configApiUrl';
+import { showErrorMessage, showSuccessMessage } from '../../utils/notifyService';
 import {
     ORDER_ROLLBACK_CREATE_FAIL,
     ORDER_ROLLBACK_CREATE_REQUEST,

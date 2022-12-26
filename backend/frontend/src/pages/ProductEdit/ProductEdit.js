@@ -7,9 +7,9 @@ import Axios from 'axios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Alert, Radio, Space, Spin } from 'antd';
 
-import { detailsProduct, updateProduct } from '~/redux/actions/productActions';
-import { PRODUCT_UPDATE_RESET } from '~/redux/constants/productConstants';
-import { axiosInstance } from '~/config/configApiUrl';
+import { detailsProduct, updateProduct } from '../../redux/actions/productActions';
+import { PRODUCT_UPDATE_RESET } from '../../redux/constants/productConstants';
+import { axiosInstance } from '../../config/configApiUrl';
 const cx = classNames.bind(styles);
 
 export default function ProductEdit() {

@@ -8,7 +8,7 @@ import styles from './ResetPassword.module.scss';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Axios from 'axios';
-import { axiosInstance } from '~/config/configApiUrl';
+import { axiosInstance } from '../../config/configApiUrl';
 
 const cx = classNames.bind(styles);
 

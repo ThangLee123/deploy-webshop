@@ -4,19 +4,19 @@ import MapGL from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import classNames from 'classnames/bind';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import CheckoutStep from '~/components/CheckoutStep';
+import CheckoutStep from '../../components/CheckoutStep';
 import styles from './ShippingAddress.module.scss';
 import { Modal, Radio, Space } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { savePaymentMethod, saveShippingAddress } from '~/redux/actions/cartActions';
+import { savePaymentMethod, saveShippingAddress } from '../../redux/actions/cartActions';
 import { Link, useNavigate } from 'react-router-dom';
-import { VisaIcon, MasterCardIcon, MomoIcon, PaypalIcon, VnPayIcon, CODIcon } from '~/components/Icons';
+import { VisaIcon, MasterCardIcon, MomoIcon, PaypalIcon, VnPayIcon, CODIcon } from '../../components/Icons';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { createOrder } from '~/redux/actions/orderActions';
-import { ORDER_CREATE_RESET } from '~/redux/constants/orderConstants';
-import { CART_EMPTY } from '~/redux/constants/cartConstants';
-import { showErrorMessage } from '~/utils/notifyService';
-import { SocketContext } from '~/config/socketContext';
+import { createOrder } from '../../redux/actions/orderActions';
+import { ORDER_CREATE_RESET } from '../../redux/constants/orderConstants';
+import { CART_EMPTY } from '../../redux/constants/cartConstants';
+import { showErrorMessage } from '../../utils/notifyService';
+import { SocketContext } from '../../config/socketContext';
 
 const cx = classNames.bind(styles);
 
@@ -514,7 +514,8 @@ function ShippingAddress() {
                                                                     Coin
                                                                 </h3>
                                                                 <p>
-                                                                    Using virtual coin that we support to purchase your bill
+                                                                    Using virtual coin that we support to purchase your
+                                                                    bill
                                                                 </p>
                                                             </Radio>
                                                         </Space>

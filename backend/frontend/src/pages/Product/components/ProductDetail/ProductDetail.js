@@ -13,7 +13,7 @@ import styles from './ProductDetail.module.scss';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Rate } from 'antd';
 import { useState } from 'react';
-import { CART_RESET_ITEM } from '~/redux/constants/cartConstants';
+import { CART_RESET_ITEM } from '../../../../redux/constants/cartConstants';
 import { useDispatch } from 'react-redux';
 
 const cx = classNames.bind(styles);

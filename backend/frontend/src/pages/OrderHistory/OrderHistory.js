@@ -4,9 +4,9 @@ import { Alert, Radio, Space, Spin, Input, Pagination } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './OrderHistory.module.scss';
-import { listOrderMine } from '~/redux/actions/orderActions';
+import { listOrderMine } from '../../redux/actions/orderActions';
 import { useState } from 'react';
-import { SocketContext } from '~/config/socketContext';
+import { SocketContext } from '../../config/socketContext';
 
 const cx = classNames.bind(styles);
 const { Search } = Input;

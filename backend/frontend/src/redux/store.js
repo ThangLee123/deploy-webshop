@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import data from '~/data';
+import data from '../data';
 import { cartReducer } from './reducers/cartReducers';
 import {
     productCreateReducer,

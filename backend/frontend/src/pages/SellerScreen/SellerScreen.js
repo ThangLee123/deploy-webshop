@@ -4,10 +4,10 @@ import styles from './SellerScreen.module.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { detailsUser } from '~/redux/actions/userActions';
-import { listProducts } from '~/redux/actions/productActions';
+import { detailsUser } from '../../redux/actions/userActions';
+import { listProducts } from '../../redux/actions/productActions';
 import { Alert, Pagination, Rate, Spin } from 'antd';
-import ProductItem from '~/components/ProductItem';
+import ProductItem from '../../components/ProductItem';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);

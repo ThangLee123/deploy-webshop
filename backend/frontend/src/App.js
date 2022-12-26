@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useRef, createContext } from 'react';
 import { io } from 'socket.io-client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { publicRoutes, privateRoutes } from '~/routes';
 import DefaultLayout from './layouts';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';

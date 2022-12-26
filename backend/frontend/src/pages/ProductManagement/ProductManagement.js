@@ -1,10 +1,10 @@
-import { createProduct, deleteProduct, listProducts } from '~/redux/actions/productActions';
+import { createProduct, deleteProduct, listProducts } from '../../redux/actions/productActions';
 import { Alert, Radio, Space, Spin, Pagination, Input } from 'antd';
 import { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET } from '~/redux/constants/productConstants';
+import { PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET } from '../../redux/constants/productConstants';
 import styles from './ProductManagement.module.scss';
 import classNames from 'classnames/bind';
 

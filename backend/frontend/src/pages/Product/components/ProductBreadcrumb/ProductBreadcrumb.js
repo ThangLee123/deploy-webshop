@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './ProductBreadcrumb.module.scss';
 import { Link, useParams } from 'react-router-dom';
-import data from '~/data';
 
 const cx = classNames.bind(styles);
 
