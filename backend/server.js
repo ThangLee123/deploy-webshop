@@ -28,11 +28,11 @@ app.use(function (req, res, next) {
 const __dirname1 = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname1, "/uploads")));
 
-console.log("ssssss", path.join(__dirname1, "/frontend/build"));
-app.use(express.static(path.join(__dirname1, "/frontend/build")));
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname1, "/frontend/build/index.html"))
-);
+// console.log("ssssss", path.join(__dirname1, "/frontend/build"));
+// app.use(express.static(path.join(__dirname1, "/frontend/build")));
+// app.get("*", (req, res) =>
+//   res.sendFile(path.join(__dirname1, "/frontend/build/index.html"))
+// );
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -51,19 +51,19 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/kltn");
 //   }
 // });
 
-app.get("/api/test", (req, res) => {
-  res.send("Server is ready");
-});
+// app.get("/api/test", (req, res) => {
+//   res.json("Server is ready");
+// });
 
 // Routes
 initRouter(app);
 
 // Catch 404 and forward to error handler
-app.use((req, res, next) => {
-  const err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
+// app.use((req, res, next) => {
+//   const err = new Error("Not Found");
+//   err.status = 404;
+//   next(err);
+// });
 
 //express-async-handler npm package (when expressAsyncHandler catch error will go to this middleware )
 app.use((err, req, res, next) => {

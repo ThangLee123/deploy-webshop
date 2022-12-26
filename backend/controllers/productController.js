@@ -3,36 +3,40 @@ const { data } = require("../data");
 const Product = require("../models/productModel");
 const User = require("../models/userModel");
 
-const getAllProducts = expressAsyncHandler(async (req, res) => {
-  const pageSize = Number(req.query.itemsPerPage) || 9;
-  const page = Number(req.query.pageNumber) || 1;
+const getAllProducts = async (req, res) => {
+  try {
+    const pageSize = Number(req.query.itemsPerPage) || 9;
+    const page = Number(req.query.pageNumber) || 1;
 
-  const seller = req.query.seller || "";
-  const sellerFilter = seller ? { seller } : {};
+    const seller = req.query.seller || "";
+    const sellerFilter = seller ? { seller } : {};
 
-  const searchValue = req.query.searchValue || "";
-  const searchValueRegex = new RegExp(searchValue, "i");
-  const searchValueFilter = searchValue
-    ? { name: { $regex: searchValueRegex } }
-    : {};
-  const count = await Product.count({
-    ...sellerFilter,
-    ...searchValueFilter,
-  });
-  const products = await Product.find({
-    ...sellerFilter,
-    ...searchValueFilter,
-  })
-    .populate("seller", "seller.name seller.logo email")
-    .skip(pageSize * (page - 1))
-    .limit(pageSize);
-  res.status(200).json({
-    products,
-    page,
-    pages: Math.ceil(count / pageSize),
-    totalProductsCount: count,
-  });
-});
+    const searchValue = req.query.searchValue || "";
+    const searchValueRegex = new RegExp(searchValue, "i");
+    const searchValueFilter = searchValue
+      ? { name: { $regex: searchValueRegex } }
+      : {};
+    const count = await Product.count({
+      ...sellerFilter,
+      ...searchValueFilter,
+    });
+    const products = await Product.find({
+      ...sellerFilter,
+      ...searchValueFilter,
+    })
+      .populate("seller", "seller.name seller.logo email")
+      .skip(pageSize * (page - 1))
+      .limit(pageSize);
+    res.json({
+      products,
+      page,
+      pages: Math.ceil(count / pageSize),
+      totalProductsCount: count,
+    });
+  } catch (err) {
+    return res.status(500).json({ msg: err.message });
+  }
+};
 
 const createProductSeed = expressAsyncHandler(async (req, res) => {
   // console.log(data);
