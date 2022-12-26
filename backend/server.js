@@ -29,10 +29,10 @@ const __dirname1 = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname1, "/uploads")));
 
 // console.log("ssssss", path.join(__dirname1, "/frontend/build"));
-// app.use(express.static(path.join(__dirname1, "/frontend/build")));
-// app.get("*", (req, res) =>
-//   res.sendFile(path.join(__dirname1, "/frontend/build/index.html"))
-// );
+app.use(express.static(path.join(__dirname1, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname1, "/frontend/build/index.html"))
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
