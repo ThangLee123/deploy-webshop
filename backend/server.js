@@ -12,11 +12,18 @@ const app = express();
 const initRouter = require("./routers/router");
 
 // The next 2 lines are to convert all api with body (http request body content) to req.body
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(cors({ origin: "*" }));
-app.use(cookieParser());
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  next();
+});
 
 const __dirname1 = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname1, "/uploads")));
@@ -26,6 +33,12 @@ app.use(express.static(path.join(__dirname1, "/frontend/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname1, "/frontend/build/index.html"))
 );
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cors({ origin: "*" }));
+app.use(cookieParser());
 
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/kltn");
 
