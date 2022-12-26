@@ -38,7 +38,7 @@ mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost:27017/kltn");
 //   }
 // });
 
-app.get("/", (req, res) => {
+app.get("/api/test", (req, res) => {
   res.send("Server is ready");
 });
 
