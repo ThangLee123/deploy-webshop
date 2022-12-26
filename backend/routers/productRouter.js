@@ -5,7 +5,7 @@ const authMiddle = require("../middlewares/authMiddleware");
 
 productRouter.post("/", productController.getAllProducts); //m
 productRouter.post(
-  "/",
+  "/createProduct",
   [authMiddle.isAuth, authMiddle.isSellerOrAdmin],
   productController.productElement
 );

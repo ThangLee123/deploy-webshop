@@ -9,7 +9,11 @@ orderRouter.post(
   orderController.getOrderList
 ); //m
 
-orderRouter.post("/", authMiddle.isAuth, orderController.createOrder);
+orderRouter.post(
+  "/createOrder",
+  authMiddle.isAuth,
+  orderController.createOrder
+);
 
 orderRouter.post("/mine", authMiddle.isAuth, orderController.getOrderHistory); //m
 orderRouter.post(

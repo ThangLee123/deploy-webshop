@@ -76,7 +76,8 @@ const authController = {
 
       // console.log(activation_token);
 
-      const url = `${CLIENT_URL}/user/activate/${activation_token}`;
+      // const url = `${CLIENT_URL}/user/activate/${activation_token}`;
+      const url = `${CLIENT_URL}`;
       sendEmail(email, url, "Verify your email address");
       res.json({
         msg: "Register Success! Please activate your email to start.",
@@ -166,7 +167,8 @@ const authController = {
         return res.status(400).json({ msg: "This email does not exist." });
 
       const access_token = createAccessToken({ id: user._id });
-      const url = `${CLIENT_URL}/user/reset/${access_token}`;
+      // const url = `${CLIENT_URL}/user/reset/${access_token}`;
+      const url = `${CLIENT_URL}`;
 
       sendEmail(email, url, "Reset your password");
       // const sendEmail = await smtpTransport.sendEmail(mailOptions);

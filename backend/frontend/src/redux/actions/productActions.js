@@ -75,7 +75,7 @@ export const createProduct = () => async (dispatch, getState) => {
     try {
         const { token } = getState();
         const { data } = await axiosInstance.post(
-            `/api/products`,
+            `/api/products/createProduct`,
             {},
             {
                 headers: {

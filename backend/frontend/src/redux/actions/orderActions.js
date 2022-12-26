@@ -47,7 +47,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     try {
         const { token } = getState();
         // console.log(token);
-        const { data } = await axiosInstance.post('/api/orders/', order, {
+        const { data } = await axiosInstance.post('/api/orders/createOrder', order, {
             headers: {
                 Authorization: `${token}`,
             },
