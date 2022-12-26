@@ -381,7 +381,7 @@ function Order() {
     useEffect(() => {
         if (userSignin.userInfo) {
             const addPayPalScript = async () => {
-                const { data } = await Axios.get('/api/config/paypal');
+                const { data } = await axiosInstance.get('/api/config/paypal');
                 const script = document.createElement('script');
                 script.type = 'text/javascript';
                 script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
@@ -501,7 +501,7 @@ function Order() {
             // console.log('Received values of form: ', order);
             setLoadingVNPay(true);
             try {
-                const res = await Axios.post(
+                const res = await axiosInstance.post(
                     '/paymentvnp/checkout',
                     {
                         firstname: order.shippingAddress.firstName,

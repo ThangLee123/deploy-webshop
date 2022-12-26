@@ -13,6 +13,7 @@ import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
 import axios from 'axios';
 import { successLoading } from '../../utils/loadingService';
+import { axiosInstance } from '../../config/configApiUrl';
 
 const cx = classNames.bind(styles);
 
@@ -61,7 +62,7 @@ const SigninScreen = () => {
         // console.log(response);
         try {
             successLoading();
-            const res = await axios.post('/api/users/google_login', { tokenId: response.tokenId });
+            const res = await axiosInstance.post('/api/users/google_login', { tokenId: response.tokenId });
             // console.log(res);
             localStorage.setItem('firstLogin', true);
             dispatch({ type: USER_SIGNIN_FIRSTLOGIN, payload: { isLogged: true } });

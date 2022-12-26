@@ -32,7 +32,7 @@ export const listProducts =
         // console.log('act2');
         try {
             // console.log('act3');
-            const { data } = await Axios.get(
+            const { data } = await axiosInstance.get(
                 `/api/products?searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}&seller=${seller}`,
             );
             // console.log(data);
@@ -53,13 +53,13 @@ export const detailsProduct = (productId) => async (dispatch) => {
     // console.log('acc2');
     try {
         // console.log('acc3');
-        const { data } = await Axios.get(`/api/products/${productId}`);
+        const { data } = await axiosInstance.get(`/api/products/${productId}`);
         // console.log(data);
         // console.log('acc4');
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
         // console.log('acc5');
     } catch (error) {
-        // console.log(error); //(axiosInstance error)
+        // console.log(error); //(axiosInstanceInstance error)
         // console.log('acc6');
         dispatch({
             type: PRODUCT_DETAILS_FAIL,
@@ -73,7 +73,7 @@ export const createProduct = () => async (dispatch, getState) => {
     dispatch({ type: PRODUCT_CREATE_REQUEST });
     try {
         const { token } = getState();
-        const { data } = await Axios.post(
+        const { data } = await axiosInstance.post(
             `/api/products`,
             {},
             {
@@ -94,7 +94,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     dispatch({ type: PRODUCT_UPDATE_REQUEST, payload: product });
     try {
         const { token } = getState();
-        const { data } = await Axios.put(`/api/products/${product._id}`, product, {
+        const { data } = await axiosInstance.put(`/api/products/${product._id}`, product, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -117,7 +117,7 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
     dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
     const { token } = getState();
     try {
-        await Axios.delete(`/api/products/${productId}`, {
+        await axiosInstance.delete(`/api/products/${productId}`, {
             headers: {
                 Authorization: `${token}`,
             },
@@ -134,7 +134,7 @@ export const createReview = (productId, review) => async (dispatch, getState) =>
     dispatch({ type: PRODUCT_REVIEW_CREATE_REQUEST });
     try {
         const { token } = getState();
-        const { data } = await Axios.post(`/api/products/${productId}/reviews`, review, {
+        const { data } = await axiosInstance.post(`/api/products/${productId}/reviews`, review, {
             headers: {
                 Authorization: `${token}`,
             },

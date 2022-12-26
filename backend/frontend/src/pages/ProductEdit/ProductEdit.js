@@ -89,8 +89,8 @@ export default function ProductEdit() {
         const bodyFormData = new FormData();
         bodyFormData.append('image', imgFile);
         try {
-            // const { data } = await Axios.post("/api/uploads/s3", // upload to upload folder s3
-            const { data } = await Axios.post('/api/uploads', bodyFormData, {
+            // const { data } = await axiosInstance.post("/api/uploads/s3", // upload to upload folder s3
+            const { data } = await axiosInstance.post('/api/uploads', bodyFormData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `${token}`,
